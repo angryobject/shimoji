@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+emojies=("👻" "👽" "👾" "👿" "💀" "👹" "👺")
+print ${emojies[ $RANDOM % ${#emojies[@]} + 1 ]}
