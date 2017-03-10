@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+cd "$(dirname "$0")"
+
+let "rnd=$RANDOM%10"
+
+if [ "$rnd" -ge "5" ]; then
+  "./shimoji-list"
+else
+   "./shimoji-range"
+fi
