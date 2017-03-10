@@ -1,0 +1,20 @@
+#!/usr/bin/env zsh
+
+function randomHex() {
+   local min=128513
+   local max=128581
+   local num
+
+   # generate random number inclusive
+   if which jot >/dev/null; then
+      num=$(jot -r 1  $min $max)   
+   else
+      num=$(shuf -i $min-$max -n 1)
+   fi
+
+   # convert number to hex 
+   printf '%x\n' "$num"
+}
+
+# print hex as unicode char
+print "\U$(randomHex)"
