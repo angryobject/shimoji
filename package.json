@@ -1,0 +1,14 @@
+{
+  "name": "shimoji",
+  "version": "1.0.0",
+  "description": "Put some emoji in your prompt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angryobject/shimoji.git"
+  },
+  "scripts": {
+    "postinstall": "SHIMOJI_DEST=/usr/local/share/zsh/site-functions npm run --silent postinstall-link",
+    "postinstall-link": "mkdir -p \"$SHIMOJI_DEST\" && ln -sf \"$PWD/shimoji\" \"$SHIMOJI_DEST/shimoji\" && ln -sf \"$PWD/shimoji-list\" \"$SHIMOJI_DEST/shimoji-list\" && ln -sf \"$PWD/shimoji-range\" \"$SHIMOJI_DEST/shimoji-range\""
+  }
+}
